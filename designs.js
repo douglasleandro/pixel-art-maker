@@ -1,11 +1,11 @@
 // Select color input
-var color = document.getElementById("colorPicker");
+const color = document.getElementById("colorPicker");
 
 // Select size input
-var grid = document.getElementById("pixelCanvas");
-var form = document.getElementById("sizePicker");
-var height = document.getElementById("inputHeight");
-var width = document.getElementById("inputWidth");
+const grid = document.getElementById("pixelCanvas");
+const form = document.getElementById("sizePicker");
+const height = document.getElementById("inputHeight");
+const width = document.getElementById("inputWidth");
 
 // When size is submitted by the user, call makeGrid()
 form.addEventListener('submit', function(e) {
@@ -23,9 +23,9 @@ grid.addEventListener('click', function(e) {
 function makeGrid() {
 
 // Your code goes here!
-  for (var i = 0; i < height.value; i++) {
-    var row = grid.insertRow(0);
-    for (var j = 0; j < width.value ; j++) {
+  for (let i = 0; i < height.value; i++) {
+    const row = grid.insertRow(0);
+    for (let j = 0; j < width.value ; j++) {
       row.insertCell(0);
     }
   }
