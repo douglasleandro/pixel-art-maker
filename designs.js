@@ -14,11 +14,7 @@ form.addEventListener('submit', function(e) {
   makeGrid();
 });
 
-grid.addEventListener('click', function(e) {
-  if (e.target.nodeName === 'TD') {
-    e.target.style.backgroundColor = color.value;
-  }
-});
+
 
 function makeGrid() {
 
@@ -26,7 +22,12 @@ function makeGrid() {
   for (let i = 0; i < height.value; i++) {
     const row = grid.insertRow(0);
     for (let j = 0; j < width.value ; j++) {
-      row.insertCell(0);
+      const cell = row.insertCell(0);
+      cell.addEventListener('click', function(e) {
+        if (e.target.nodeName === 'TD') {
+          e.target.style.backgroundColor = color.value;
+        }
+      });
     }
   }
 
